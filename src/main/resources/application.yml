@@ -1,0 +1,32 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: ms-usuarios
+  datasource:
+    url: ${DB_URL}
+    username: ${DB_USUARIO}
+    password: ${DB_PASSWORD}
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+logging:
+  level:
+    root: INFO
+    cl.duoc.foro: ${LOG_NIVEL:INFO}
+
+jwt:
+  secreto: ${JWT_SECRETO}
+  minutos-validez: 60
+
+cors:
+  origen: ${CORS_ORIGEN:http://localhost:3000}

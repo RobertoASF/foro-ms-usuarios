@@ -1,0 +1,7 @@
+target/
+.env
+Wallet_*/
+*.log
+.idea/
+.vscode/
+*.iml
