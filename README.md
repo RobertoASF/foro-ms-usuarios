@@ -1,6 +1,6 @@
 # ms-usuarios
 
-Microservicio del foro en línea que se encarga de los usuarios, los roles y el inicio de sesión. Al iniciar sesión entrega un token JWT que también sirve para usar `ms-publicaciones`.
+Microservicio del foro de TCG (juegos de cartas coleccionables) que se encarga de los usuarios, los roles y el inicio de sesión. Al iniciar sesión entrega un token JWT que también sirve para usar `ms-publicaciones`.
 
 Hecho con Java 21, Spring Boot 4.1, Spring Data JPA, Spring Security y Oracle.
 
