@@ -1,0 +1,6 @@
+target/
+.git/
+db/
+Wallet_*/
+.env
+*.md
