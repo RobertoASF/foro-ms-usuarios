@@ -65,12 +65,12 @@ Los scripts están en la carpeta `db` y se ejecutan conectado como `FORO_USUARIO
 1. `01_tablas.sql` crea las tablas.
 2. `02_datos.sql` carga los roles y los usuarios de prueba.
 
-## Variables de entorno
+## Configuración
+
+Está en `src/main/resources/application.properties`. La conexión a Oracle lee el Wallet desde la raíz del disco, en `C:\Wallet_dbfullstack3`. Las claves no van en ese archivo, se entregan con estas variables de entorno:
 
 | Variable | Descripción |
 |---|---|
-| `DB_URL` | Conexión JDBC a Oracle |
-| `DB_USUARIO` | Usuario de la base de datos |
 | `DB_PASSWORD` | Clave de la base de datos |
 | `JWT_SECRETO` | Secreto para firmar los tokens, de al menos 32 caracteres |
 | `CORS_ORIGEN` | Origen web permitido |
