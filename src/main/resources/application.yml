@@ -8,6 +8,8 @@ spring:
     url: ${DB_URL}
     username: ${DB_USUARIO}
     password: ${DB_PASSWORD}
+    hikari:
+      maximum-pool-size: 5
   jpa:
     open-in-view: false
     hibernate:
