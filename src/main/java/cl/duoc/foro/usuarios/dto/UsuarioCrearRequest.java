@@ -1,5 +1,6 @@
 package cl.duoc.foro.usuarios.dto;
 
+import cl.duoc.foro.usuarios.validation.ClaveSegura;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
@@ -17,6 +18,6 @@ public record UsuarioCrearRequest(
         String email,
 
         @NotBlank(message = "La clave es obligatoria")
-        @Size(min = 8, max = 72, message = "La clave debe tener entre 8 y 72 caracteres")
+        @ClaveSegura
         String password) {
 }

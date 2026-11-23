@@ -72,6 +72,17 @@ class UsuarioControllerTest {
                 .andExpect(jsonPath("$.detalles.password").exists());
     }
 
+    @Test
+    void registroConClaveSinMayusculaNiEspecialSeRechaza() throws Exception {
+        mockMvc.perform(post("/api/usuarios")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content("""
+                                {"nombreUsuario": "nuevo", "email": "nuevo@foro.cl", "password": "clavesimple1"}
+                                """))
+                .andExpect(status().isBadRequest())
+                .andExpect(jsonPath("$.detalles.password").exists());
+    }
+
     private JwtRequestPostProcessor token(Long id, String rol) {
         return jwt().jwt(datos -> datos.subject("prueba").claim("uid", id).claim("rol", rol))
                 .authorities(new SimpleGrantedAuthority("ROLE_" + rol));
