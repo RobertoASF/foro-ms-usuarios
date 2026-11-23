@@ -1,5 +1,6 @@
 package cl.duoc.foro.usuarios.dto;
 
+import cl.duoc.foro.usuarios.validation.ClaveSegura;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -12,6 +13,6 @@ public record UsuarioActualizarRequest(
         @Size(max = 120, message = "El email no puede superar los 120 caracteres")
         String email,
 
-        @Size(min = 8, max = 72, message = "La clave debe tener entre 8 y 72 caracteres")
+        @ClaveSegura
         String password) {
 }
