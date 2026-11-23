@@ -30,6 +30,17 @@ Ejemplo de inicio de sesión:
 }
 ```
 
+## Reglas de la clave
+
+Al registrar o cambiar la clave se validan seis reglas, las mismas que revisa el frontend. Están juntas en la anotación `@ClaveSegura`:
+
+1. Entre 8 y 20 caracteres.
+2. Al menos una mayúscula.
+3. Al menos una minúscula.
+4. Al menos un número.
+5. Al menos un carácter especial.
+6. Sin espacios.
+
 Todos los errores responden con el mismo formato:
 
 ```json
@@ -55,7 +66,8 @@ src/main/java/cl/duoc/foro/usuarios
 ├── model        Entidades JPA
 ├── repository   Acceso a Oracle
 ├── security     Datos del usuario autenticado y respuestas 401 y 403
-└── service      Reglas de negocio
+├── service      Reglas de negocio
+└── validation   Anotación @ClaveSegura con las reglas de la clave
 ```
 
 ## Base de datos
